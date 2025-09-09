@@ -16,5 +16,8 @@ export type PoliticiansArrayType = PoliticianType[];
 export type GlobalContextType = {
     filteredPoliticians: PoliticiansArrayType,
     search: string,
-    setSearch: React.Dispatch<React.SetStateAction<string>>
+    setSearch: React.Dispatch<React.SetStateAction<string>>,
+    uniquePositions: string[],
+    selectedPosition: string,
+    setSelectedPosition: React.Dispatch<React.SetStateAction<string>>
 };

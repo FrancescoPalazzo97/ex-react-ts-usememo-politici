@@ -1,6 +1,6 @@
 import PoliticiansList from "../components/PoliticiansList"
 import Loader from "../components/Loader"
-import SearchBar from "../components/SearchBar"
+import SearchContainer from "../components/SearchContainer";
 import { useLoader } from "../hooks"
 
 export default function HomePage() {
@@ -12,7 +12,7 @@ export default function HomePage() {
             {isLoading
                 ? <Loader />
                 : (<>
-                    <SearchBar />
+                    <SearchContainer />
                     <PoliticiansList />
                 </>)}
         </main>

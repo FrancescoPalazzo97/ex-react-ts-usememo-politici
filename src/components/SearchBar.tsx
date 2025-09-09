@@ -17,7 +17,7 @@ export default function SearchBar({ placeholder = "Cerca politico..." }: SearchB
   };
 
   return (
-    <div className="w-full max-w-md mx-auto mb-8">
+    <div className="w-full max-w-md mx-auto mb-4">
       <div className="relative">
         <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
           <i className="fa-solid fa-magnifying-glass text-gray-400"></i>
