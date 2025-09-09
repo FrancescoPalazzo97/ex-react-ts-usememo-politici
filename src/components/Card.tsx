@@ -5,7 +5,7 @@ type CardProps = {
 }
 
 export default function Card({ politicians }: CardProps) {
-    const { id, name, dob, country, party, position, years_in_office, biography, image } = politicians;
+    const { name, dob, country, party, position, years_in_office, biography, image } = politicians;
     return (
         <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 h-full flex flex-col">
             <div className="h-[500] md:h-96 overflow-hidden">
