@@ -13,6 +13,6 @@ export type PoliticianType = {
 
 export type PoliticiansArrayType = PoliticianType[];
 
-export type GlobalCotextType = {
-    politicians: PoliticiansArrayType | null
+export type GlobalContextType = {
+    filteredPoliticians: PoliticiansArrayType
 };
