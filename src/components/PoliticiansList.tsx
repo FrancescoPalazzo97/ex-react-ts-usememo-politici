@@ -1,19 +1,18 @@
 import { useGlobalContext } from "../hooks"
+import Card from "./Card";
+import GridList from "./GridList";
 
 export default function PoliticiansList() {
     const { filteredPoliticians } = useGlobalContext();
     return (
         <div>
-            <ul>
+            <GridList>
                 {filteredPoliticians.map(p => (
-                    <li>
-                        <div className="max-w-[200px]">
-                            <img src={p.image} alt={`${p.image}'s image`} className="w-full" />
-                            <h2>{p.name}</h2>
-                        </div>
+                    <li key={p.id} className="p-8">
+                        <Card politicians={p} />
                     </li>
                 ))}
-            </ul>
+            </GridList>
         </div>
     )
 }
