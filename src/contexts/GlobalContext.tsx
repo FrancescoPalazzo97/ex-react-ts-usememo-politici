@@ -5,19 +5,26 @@ import { getPoliticians } from "../hooks";
 export const GlobalContext = createContext<GlobalContextType | undefined>(undefined);
 
 export const GlobalProvider = ({ children }: { children: React.ReactNode }) => {
-    const [filteredPoliticians, setFilteredPoliticians] = useState<PoliticiansArrayType>([]);
+    const [search, setSearch] = useState<string>('');
 
     const politicians = getPoliticians();
-    
-    useEffect(() => {
-        if (politicians) {
-            setFilteredPoliticians(politicians);
-        }
-    }, [politicians]);
+
+    const filteredPoliticians = useMemo(() => {
+        if (!politicians) return [];
+        return politicians.filter(p => {
+            return (
+                !search.trim()
+                || p.name.toLowerCase().includes(search.trim().toLowerCase())
+                || p.biography.toLowerCase().includes(search.trim().toLowerCase())
+            )
+        });
+    }, [politicians, search]);
 
     const value = useMemo(() => ({
-        filteredPoliticians
-    }), [filteredPoliticians]);
+        filteredPoliticians,
+        search,
+        setSearch
+    }), [filteredPoliticians, search]);
 
     return (
         <GlobalContext.Provider value={value}>

@@ -14,5 +14,7 @@ export type PoliticianType = {
 export type PoliticiansArrayType = PoliticianType[];
 
 export type GlobalContextType = {
-    filteredPoliticians: PoliticiansArrayType
+    filteredPoliticians: PoliticiansArrayType,
+    search: string,
+    setSearch: React.Dispatch<React.SetStateAction<string>>
 };
